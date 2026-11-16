@@ -6,7 +6,7 @@ import { color } from "./config/color-config.js";
 export const rl = readline.createInterface({
   input,
   output,
-  prompt: `${color.root("fluoce")} ${process.cwd()}> `,
+  prompt: `${color.root("fluoce")} ${process.cwd()}>`,
 });
 
 let isClosed = false;
@@ -31,6 +31,5 @@ rl.on("line", async (line) => {
     console.log(color.error(`Command not found: ${cmd}`));
   }
   if (isClosed) return;
-  rl.resume();
   rl.prompt();
 });
