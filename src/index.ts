@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import dotenv from "dotenv";
 import * as readline from "node:readline";
 import { stdin as input, stdout as output } from "node:process";

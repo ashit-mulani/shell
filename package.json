@@ -17,18 +17,11 @@
     "README.md"
   ],
   "bin": {
-    "fluoce": "./dist/index.js"
+    "fluoce": "dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "12.21.0",
-      "onFail": "download"
-    }
-  },
   "packageManager": "pnpm@12.21.0",
   "type": "module",
   "devDependencies": {
