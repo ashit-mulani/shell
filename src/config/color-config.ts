@@ -8,4 +8,5 @@ export const color = {
   lsFile: chalk.italic,
   lsDir: chalk.blue,
   cat: chalk.hex("#93C5FD"),
+  treeBranch: chalk.gray.dim,
 };

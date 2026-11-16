@@ -1,6 +1,7 @@
 import { funcCat } from "../function/funcCat.js";
 import { funcCd } from "../function/funcCd.js";
 import { funcClear } from "../function/funcClear.js";
+import { funcEnv } from "../function/funcEnv.js";
 import { funcExit } from "../function/funcExit.js";
 import { funcHelp } from "../function/funcHelp.js";
 import { funcLs } from "../function/funcLs.js";
@@ -8,6 +9,7 @@ import { funcMkdir } from "../function/funcMkdir.js";
 import { funcRm } from "../function/funcRm.js";
 import { funcRmdir } from "../function/funcRmdir.js";
 import { funcTouch } from "../function/funcTouch.js";
+import { funcTree } from "../function/funcTree.js";
 
 export interface CommandConfig {
   command: string;
@@ -40,14 +42,26 @@ export const commandConfig: CommandConfig[] = [
     description: "Change the current directory",
     function: funcCd,
   },
-  { command: "ls", description: "List directory contents", function: funcLs },
+  {
+    command: "ls",
+    description: "List directory contents",
+    function: funcLs,
+  },
   {
     command: "touch",
     description: "Create an empty file",
     function: funcTouch,
   },
-  { command: "rm", description: "Remove a file", function: funcRm },
-  { command: "mkdir", description: "Create a directory", function: funcMkdir },
+  {
+    command: "rm",
+    description: "Remove a file",
+    function: funcRm,
+  },
+  {
+    command: "mkdir",
+    description: "Create a directory",
+    function: funcMkdir,
+  },
   {
     command: "rmdir",
     description: "Remove an empty directory",
@@ -57,5 +71,15 @@ export const commandConfig: CommandConfig[] = [
     command: "cat",
     description: "Show file content",
     function: funcCat,
+  },
+  {
+    command: "tree",
+    description: "Show folder structure in tree view",
+    function: funcTree,
+  },
+  {
+    command: "env",
+    description: "Show enviroment varibale",
+    function: funcEnv,
   },
 ];
