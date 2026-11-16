@@ -1,11 +1,8 @@
 #!/usr/bin/env node
-import dotenv from "dotenv";
 import * as readline from "node:readline";
 import { stdin as input, stdout as output } from "node:process";
 import { commandConfig } from "./config/command-config.js";
 import { color } from "./config/color-config.js";
-
-dotenv.config();
 
 export const rl = readline.createInterface({
   input,
