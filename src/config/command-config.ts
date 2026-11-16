@@ -1,3 +1,4 @@
+import { funcCat } from "../function/funcCat.js";
 import { funcCd } from "../function/funcCd.js";
 import { funcClear } from "../function/funcClear.js";
 import { funcExit } from "../function/funcExit.js";
@@ -51,5 +52,10 @@ export const commandConfig: CommandConfig[] = [
     command: "rmdir",
     description: "Remove an empty directory",
     function: funcRmdir,
+  },
+  {
+    command: "cat",
+    description: "Show file content",
+    function: funcCat,
   },
 ];
