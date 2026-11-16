@@ -13,7 +13,10 @@ export async function funcRmdir(args: string[]) {
   const safePath = folderName.replace(/^[\\/]+/, "");
   const folderPath = path.resolve(dir, safePath);
   try {
-    await fs.rmdir(folderPath);
+    await fs.rm(folderPath, {
+      recursive: true,
+      force: false,
+    });
     console.log(`directory removed: ${folderPath}`);
   } catch (error) {
     console.error(`mkdir: '${dir}': ${error}`);

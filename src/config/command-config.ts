@@ -1,5 +1,6 @@
 import { funcCd } from "../function/funcCd.js";
 import { funcClear } from "../function/funcClear.js";
+import { funcExit } from "../function/funcExit.js";
 import { funcHelp } from "../function/funcHelp.js";
 import { funcLs } from "../function/funcLs.js";
 import { funcMkdir } from "../function/funcMkdir.js";
@@ -17,6 +18,11 @@ export const commandConfig: CommandConfig[] = [
     command: "help",
     description: "Show this help message",
     function: funcHelp,
+  },
+  {
+    command: "exit",
+    description: "Exit the terminal",
+    function: funcExit,
   },
   {
     command: "cls",

@@ -1,5 +1,7 @@
 import path from "node:path";
 import fs from "node:fs/promises";
+import { rl } from "../index.js";
+import { color } from "../config/color-config.js";
 
 export async function funcCd(args: string[]) {
   const dir = process.cwd();
@@ -17,6 +19,7 @@ export async function funcCd(args: string[]) {
     }
     process.chdir(folderPath);
     console.log(`In: ${folderName}`);
+    rl.setPrompt(`${color.root("fluoce")} ${folderPath}>`);
   } catch (error) {
     console.error(`cd: '${dir}': ${error}`);
   }

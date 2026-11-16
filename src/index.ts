@@ -3,20 +3,23 @@ import { stdin as input, stdout as output } from "node:process";
 import { commandConfig } from "./config/command-config.js";
 import { color } from "./config/color-config.js";
 
-const rl = readline.createInterface({
+export const rl = readline.createInterface({
   input,
   output,
-  prompt: `${color.root(process.cwd())}> `,
+  prompt: `${color.root("fluoce")} ${process.cwd()}> `,
+});
+
+let isClosed = false;
+
+rl.on("close", () => {
+  isClosed = true;
 });
 
 rl.prompt();
 
 rl.on("line", async (line) => {
+  rl.pause();
   const [cmd, ...args] = line.trim().split(/\s+/);
-  if (cmd == "exit") {
-    rl.close();
-    return;
-  }
   const conf = commandConfig.find((c) => c.command === cmd);
   if (conf) {
     try {
@@ -24,6 +27,10 @@ rl.on("line", async (line) => {
     } catch (e) {
       console.error(e);
     }
+  } else if (cmd) {
+    console.log(color.error(`Command not found: ${cmd}`));
   }
+  if (isClosed) return;
+  rl.resume();
   rl.prompt();
 });

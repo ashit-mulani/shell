@@ -1,7 +1,8 @@
 import chalk from "chalk";
 
 export const color = {
-  root: chalk.bold,
+  root: chalk.green,
+  error: chalk.red,
   lsFile: chalk.italic,
-  lsDir: chalk.green,
+  lsDir: chalk.blue,
 };
