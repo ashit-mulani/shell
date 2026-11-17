@@ -1,13 +1,20 @@
 {
   "name": "@fluoce/shell",
-  "version": "1.0.0",
-  "description": "Fluoce - A custom interactive terminal shell",
+  "version": "1.1.0",
+  "description": "fluoce: A custom interactive terminal shell",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "build:win": "bun build ./src/index.ts --compile --target=bun-windows-x64 --outfile=release/fluoce.exe",
+    "build:mac-x64": "bun build ./src/index.ts --compile --target=bun-darwin-x64 --outfile=release/fluoce-shell-mac-x64",
+    "build:mac-arm64": "bun build ./src/index.ts --compile --target=bun-darwin-arm64 --outfile=release/fluoce-shell-mac-arm64",
+    "build:linux-x64": "bun build ./src/index.ts --compile --target=bun-linux-x64 --outfile=release/fluoce-shell-linux-x64",
+    "build:linux-arm64": "bun build ./src/index.ts --compile --target=bun-linux-arm64 --outfile=release/fluoce-shell-linux-arm64",
+    "clean": "node -e \"require('node:fs').rmSync('release', { recursive: true, force: true })\"",
+    "exe": "pnpm clean  && pnpm build:win && pnpm build:mac-x64 && pnpm build:mac-arm64 && pnpm build:linux-x64 && pnpm build:linux-arm64"
   },
   "publishConfig": {
     "access": "public"
