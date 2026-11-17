@@ -175,6 +175,9 @@ importers:
 
   .:
     dependencies:
+      adm-zip:
+        specifier: ^0.6.1
+        version: 0.6.1
       chalk:
         specifier: ^6.0.1
         version: 6.0.1
@@ -470,6 +473,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  adm-zip@0.6.1:
+    resolution: {integrity: sha512-Xwrja8nx9e5o2N1my4DsKCeKpdrnACyr1wtbPxBDgGzKzKyE9kRtBFA8mWldI+RVlD7CBZNWY/wQ2+ydwOR6kQ==}
+    engines: {node: '>=14.0'}
+
   chalk@6.0.1:
     resolution: {integrity: sha512-/Ce6KNm3vIbWdMlNna6RVIZ/ICQxnJxCicet5LBKK9ZffBkqzDw0xh9EiKSljdRtiIQ1S1z4YgcscUUGzNCWrA==}
     engines: {node: '>=22'}
@@ -640,6 +647,8 @@ snapshots:
 
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
+
+  adm-zip@0.6.1: {}
 
   chalk@6.0.1: {}
 

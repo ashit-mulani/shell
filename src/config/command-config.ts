@@ -10,12 +10,15 @@ import { funcRm } from "../function/funcRm.js";
 import { funcRmdir } from "../function/funcRmdir.js";
 import { funcTouch } from "../function/funcTouch.js";
 import { funcTree } from "../function/funcTree.js";
+import { funcUnzip } from "../function/funcUnzip.js";
+import { funcZip } from "../function/funcZip.js";
 
 export interface CommandConfig {
   command: string;
   description?: string;
   function: (args: string[]) => void | Promise<void>;
 }
+
 export const commandConfig: CommandConfig[] = [
   {
     command: "help",
@@ -64,7 +67,7 @@ export const commandConfig: CommandConfig[] = [
   },
   {
     command: "rmdir",
-    description: "Remove an empty directory",
+    description: "Remove a directory",
     function: funcRmdir,
   },
   {
@@ -81,5 +84,15 @@ export const commandConfig: CommandConfig[] = [
     command: "env",
     description: "Show enviroment varibale",
     function: funcEnv,
+  },
+  {
+    command: "zip",
+    description: "Compress a files",
+    function: funcZip,
+  },
+  {
+    command: "unzip",
+    description: "Decompress a files",
+    function: funcUnzip,
   },
 ];
