@@ -1,11 +1,16 @@
 import { funcCat } from "../function/funcCat.js";
 import { funcCd } from "../function/funcCd.js";
 import { funcClear } from "../function/funcClear.js";
+import { funcDelete } from "../function/funcDelete.js";
 import { funcEnv } from "../function/funcEnv.js";
 import { funcExit } from "../function/funcExit.js";
+import { funcGet } from "../function/funcGet.js";
 import { funcHelp } from "../function/funcHelp.js";
 import { funcLs } from "../function/funcLs.js";
 import { funcMkdir } from "../function/funcMkdir.js";
+import { funcPatch } from "../function/funcPatch.js";
+import { funcPost } from "../function/funcPost.js";
+import { funcPut } from "../function/funcPut.js";
 import { funcRm } from "../function/funcRm.js";
 import { funcRmdir } from "../function/funcRmdir.js";
 import { funcTouch } from "../function/funcTouch.js";
@@ -94,5 +99,30 @@ export const commandConfig: CommandConfig[] = [
     command: "unzip",
     description: "Decompress a files",
     function: funcUnzip,
+  },
+  {
+    command: "GET",
+    description: "Send GET request",
+    function: funcGet,
+  },
+  {
+    command: "POST",
+    description: "Send POST request",
+    function: funcPost,
+  },
+  {
+    command: "PUT",
+    description: "Send PUT request",
+    function: funcPut,
+  },
+  {
+    command: "PATCH",
+    description: "Send PATCH request",
+    function: funcPatch,
+  },
+  {
+    command: "DELETE",
+    description: "Send DELETE request",
+    function: funcDelete,
   },
 ];

@@ -2,6 +2,7 @@ import chalk from "chalk";
 
 export const color = {
   root: chalk.green,
+  success: chalk.green,
   error: chalk.red,
   bold: chalk.bold,
   loading: chalk.gray.dim,
