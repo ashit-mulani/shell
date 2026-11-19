@@ -1,6 +1,7 @@
 import { funcCat } from "../function/funcCat.js";
 import { funcCd } from "../function/funcCd.js";
 import { funcClear } from "../function/funcClear.js";
+import { funcCp } from "../function/funcCp.js";
 import { funcDelete } from "../function/funcDelete.js";
 import { funcEnv } from "../function/funcEnv.js";
 import { funcExit } from "../function/funcExit.js";
@@ -59,6 +60,11 @@ export const commandConfig: CommandConfig[] = [
     command: "touch",
     description: "Create an empty file",
     function: funcTouch,
+  },
+  {
+    command: "cp",
+    description: "Cpoy a file or folder",
+    function: funcCp,
   },
   {
     command: "rm",
