@@ -55,7 +55,7 @@ npm install -g @ashit-feat/shell
 Start the shell:
 
 ```bash
-ashit-feat
+fluoce
 ```
 
 ## Command Usage
