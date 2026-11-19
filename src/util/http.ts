@@ -10,9 +10,16 @@ export async function http({
   headers?: Record<string, string>;
 }) {
   try {
+    const requestHeaders = new Headers(headers);
+    if (body && !requestHeaders.has("Content-Type")) {
+      requestHeaders.set("Content-Type", "application/json");
+    }
+    if (!requestHeaders.has("Accept")) {
+      requestHeaders.set("Accept", "application/json");
+    }
     const response = await fetch(url, {
       method,
-      headers,
+      headers: requestHeaders,
       body: body ?? null,
     });
     return response;

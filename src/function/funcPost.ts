@@ -1,5 +1,6 @@
 import { color } from "../config/color-config.js";
 import { http } from "../util/http.js";
+import { parseArgBody } from "../util/parse-arg-body.js";
 import { parseHeader } from "../util/parse-header.js";
 import { parseResponse } from "../util/parse-response.js";
 
@@ -8,14 +9,14 @@ export async function funcPost(args: string[]) {
   const headerArgs = args.filter((arg) => arg.startsWith("-h="));
   const bodyArg = args.find((arg) => arg.startsWith("-b="));
   const pFlag = args.includes("-p");
-  const body = bodyArg?.slice(3);
   if (!url) {
     console.log(`POST: url is required, ex: POST your-url`);
     return;
   }
   try {
-    const headers = parseHeader(headerArgs);
     console.log(color.loading(`POST fetching . . .`));
+    const headers = parseHeader(headerArgs);
+    const body = await parseArgBody(bodyArg?.slice(3));
     const res = await http({
       url,
       method: "POST",
