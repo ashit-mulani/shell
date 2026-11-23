@@ -3,11 +3,13 @@ import * as readline from "node:readline";
 import { stdin as input, stdout as output } from "node:process";
 import { commandConfig } from "./config/command-config.js";
 import { color } from "./config/color-config.js";
+import { pathCompleter } from "./util/path-completer.js";
 
 export const rl = readline.createInterface({
   input,
   output,
   prompt: `${color.root("fluoce")} ${process.cwd()}>`,
+  completer: pathCompleter,
 });
 
 let isClosed = false;
